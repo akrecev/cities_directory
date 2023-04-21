@@ -21,12 +21,12 @@ public class CitiesManager {
                 String line = scanner.nextLine();
                 String[] data = line.split(SEPARATOR);
                 City city = new City(
-                        Integer.parseInt(data[0].trim()),
-                        data.length < 2 ? "" : data[1].trim(),
-                        data.length < 3 ? "" : data[2].trim(),
-                        data.length < 4 ? "" : data[3].trim(),
-                        data.length < 5 ? 0 : Integer.parseInt(data[4].trim()),
-                        data.length < 6 ? "" : data[5].trim()
+                        Integer.parseInt(data[0].trim()),                             // id
+                        data.length < 2 ? "" : data[1].trim(),                        // name
+                        data.length < 3 ? "" : data[2].trim(),                        // region
+                        data.length < 4 ? "" : data[3].trim(),                        // district
+                        data.length < 5 ? 0 : Integer.parseInt(data[4].trim()),       // population
+                        data.length < 6 ? "" : data[5].trim()                         // foundation
                 );
                 System.out.println(city + "\n");
             }
