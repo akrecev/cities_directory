@@ -58,4 +58,18 @@ public class CitiesManager {
         }
     }
 
+    public String findMaxPopulation (List<City> cityList) {
+        City[] cityArray = cityList.toArray(new City[0]);
+        int maxPopulation = 0;
+        int index = 0;
+        for (int i = 0; i < cityArray.length; i++) {
+            if (cityArray[i].getPopulation() > maxPopulation) {
+                maxPopulation = cityArray[i].getPopulation();
+                index = i;
+            }
+        }
+
+        return "[" + index + "] = " + maxPopulation;
+    }
+
 }
