@@ -13,8 +13,7 @@ public class Main {
 
         CitiesManager citiesManager = new CitiesManager();
         List<City> cityList = citiesManager.loadCities(file);
-
-        System.out.println(citiesManager.findMaxPopulation(cityList));
+        citiesManager.countRegionCities(cityList);
 
     }
 }

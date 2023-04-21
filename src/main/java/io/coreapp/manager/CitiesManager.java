@@ -58,7 +58,7 @@ public class CitiesManager {
         }
     }
 
-    public String findMaxPopulation (List<City> cityList) {
+    public String findMaxPopulation(List<City> cityList) {
         City[] cityArray = cityList.toArray(new City[0]);
         int maxPopulation = 0;
         int index = 0;
@@ -72,4 +72,18 @@ public class CitiesManager {
         return "[" + index + "] = " + maxPopulation;
     }
 
+    public void countRegionCities(List<City> cityList) {
+        cityList.sort(Comparator.comparing(City::getRegion));
+        int countCities = 1;
+
+        for (int i = 0; i < cityList.size() - 1; i++) {
+            if (cityList.get(i + 1).getRegion().equals(cityList.get(i).getRegion())) {
+                countCities++;
+            } else {
+                System.out.println("- " + cityList.get(i).getRegion() + " - " + countCities);
+                countCities = 1;
+            }
+        }
+        System.out.println("- " + cityList.get(cityList.size() - 1).getRegion() + " - " + countCities);
+    }
 }
