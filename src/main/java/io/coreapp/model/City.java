@@ -6,8 +6,6 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-@EqualsAndHashCode
 public class City {
     private int id;
     private String name;
